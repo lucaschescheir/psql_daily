@@ -1,0 +1,12 @@
+select count(id) from votes where votes.gender = 'female' and votes."cityId" = 10;
+select count(id) from votes where votes.gender = 'male' and votes."cityId" = 10;
+
+select avg(age) from votes where votes."cityId" = 77;
+
+
+
+
+
+select states.name, count(cities."stateId") from cities join states ON (cities."stateId" = states.id) group by states.name order by count desc;
+
+select cities."stateId", count(cities.id) from cities join votes ON (cities.id = votes."cityId") group by cities."stateId" order by count desc;
